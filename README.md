@@ -1,3 +1,3 @@
-# Sklearn Starting Pack!
+ # Sklearn Starter Pack!
 
 TODO: add description
