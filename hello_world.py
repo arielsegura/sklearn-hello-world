@@ -6,7 +6,6 @@ from sklearn import svm
 print("Running sklearn Hello World!")
 
 # set up
-iris = datasets.load_iris()
 digits = datasets.load_digits()
 
 print(digits.data)
