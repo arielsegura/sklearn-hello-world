@@ -1,7 +1,11 @@
 # Based on https://scikit-learn.org/stable/tutorial/basic/tutorial.html
 
+import matplotlib
 from sklearn import datasets
 from sklearn import svm
+
+matplotlib.use("TkAgg")
+from matplotlib import pyplot as plt
 
 print("Running sklearn Hello World!")
 
@@ -26,7 +30,18 @@ clf.fit(digits.data[:-1], digits.target[:-1])
 
 # predict
 print("Predicting")
-prediction = clf.predict(digits.data[-1:])
+digit_to_test = 1
+some_digit = digits.data[digit_to_test]
+digit_target = digits.target[digit_to_test]
+
+prediction = clf.predict([some_digit])
 
 print(prediction)
-print("Real Value ", digits.target[-1:])
+print("Real Value ", digit_target)
+
+some_digit_image = some_digit.reshape(8, 8)
+print("Rendering")
+
+plt.imshow(some_digit_image, cmap=plt.cm.gray_r, interpolation='nearest')
+plt.axis("off")
+plt.show()
